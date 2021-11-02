@@ -12,11 +12,12 @@ e Plugins para padronização de commits(Commitlint, Commitzen, Husky)
 
 * Clone o projeto em um diretório da sua máquina
 * Copie o caminho absoluto dele
-* Abra o arquivo .bashrc ou .zshrc e cole a seguinte linha;
-
+* Abra o arquivo .bashrc ou .zshrc 
 ```
 sudo SEU_EDITOR_DE_TEXTO ~/.bashrc 
 ```
+
+* Depois cole a seguinte linha
 
 ```
 alias start-node-project='CAMINHO_ABSOLUTO_DO_ARQUIVO_SH' 
