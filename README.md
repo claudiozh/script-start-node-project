@@ -24,7 +24,7 @@ alias start-node-project='CAMINHO_ABSOLUTO_DO_ARQUIVO_SH'
 ```
 
 * Feito isso esse comando já estará disponivel de forma global na máquina
-* Depois crie a pasta do projeto o clone um projeto já existente e execute o seguinte comando
+* Depois crie a pasta do projeto e inicie o git ou clone um projeto já existente e execute o seguinte comando
 
 ```
 start-node-project
