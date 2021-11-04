@@ -8,15 +8,18 @@ init_repo_git() {
     git init
 }
 
+install_package_for_update_package_json() {
+    yarn add npe --global
+}
+
 install_typescript() {
     yarn add typescript -D
     yarn add ts-node-dev -D
     yarn tsc --init
+
+    yarn npe script.dev "ts-node-dev ./src/index.ts"
 }
 
-install_package_for_update_package_json() {
-    yarn add npe --global
-}
 
 install_plugins_pattern_commits() {
     yarn add @commitlint/config-conventional @commitlint/cli -D
@@ -44,8 +47,8 @@ install_eslint() {
 
 init_project
 init_repo_git
-install_typescript
 install_package_for_update_package_json
+install_typescript
 install_plugins_pattern_commits
 install_eslint
 
