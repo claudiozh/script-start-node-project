@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 init_project() {
     yarn init -y
@@ -9,7 +9,11 @@ init_repo_git() {
 }
 
 install_package_for_update_package_json() {
-    yarn add npe --global
+    yarn add npe
+}
+
+remove_package_for_update_package_json() {
+    yarn remove npe
 }
 
 install_typescript() {
@@ -17,9 +21,8 @@ install_typescript() {
     yarn add ts-node-dev -D
     yarn tsc --init
 
-    yarn npe script.dev "ts-node-dev ./src/index.ts"
+    yarn npe scripts.dev "ts-node-dev ./src/index.ts"
 }
-
 
 install_plugins_pattern_commits() {
     yarn add @commitlint/config-conventional @commitlint/cli -D
@@ -31,7 +34,7 @@ install_plugins_pattern_commits() {
     yarn add commitizen -D
     yarn commitizen init cz-conventional-changelog --yarn --dev --exact
 
-    yarn npe script.commit "git-cz"
+    yarn npe scripts.commit "git-cz"
 }
 
 install_eslint() {
@@ -51,4 +54,4 @@ install_package_for_update_package_json
 install_typescript
 install_plugins_pattern_commits
 install_eslint
-
+remove_package_for_update_package_json

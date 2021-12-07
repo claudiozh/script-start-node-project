@@ -10,6 +10,13 @@ e Plugins para padronização de commits(Commitlint, Commitzen, Husky)
 
 ## Como usar
 
+
+* Crie a pasta do seu projeto e execute o seguinte comando:
+```
+wget -qO- https://raw.githubusercontent.com/claudiozh/script-start-project-node/main/setup.sh | sh
+```
+## Outra forma de usar
+
 * Clone o projeto em um diretório da sua máquina
 * Copie o caminho absoluto dele
 * Abra o arquivo .bashrc ou .zshrc 
