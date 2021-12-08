@@ -1,4 +1,4 @@
-!/bin/bash
+# !/bin/bash
 
 init_project() {
     yarn init -y
@@ -19,9 +19,8 @@ remove_package_for_update_package_json() {
 install_typescript() {
     yarn add typescript -D
     yarn add ts-node-dev -D
-    yarn tsc --init
 
-    yarn npe scripts.dev "ts-node-dev ./src/index.ts"
+    yarn npe scripts.dev "ts-node-dev ./src/app.ts"
 }
 
 install_plugins_pattern_commits() {
@@ -48,10 +47,45 @@ install_eslint() {
     yarn eslint --init
 }
 
+create_folders() {
+    mkdir src
+    mkdir dist
+}
+
+create_file_app () {
+    echo "// code here" > ./src/app.ts
+}
+
+create_file_gitignore() {
+    echo "node_modules" >>.gitignore
+    echo "dist" >>.gitignore
+}
+
+create_file_tsconfig() {
+    echo '{
+  "compilerOptions": {
+    "target": "es6",                                     
+    "module": "commonjs",                                
+    "rootDir": "./src",                                  
+    "outDir": "./dist",                                   
+    "esModuleInterop": true,                           
+    "forceConsistentCasingInFileNames": true,           
+    "strict": true,                                      
+    "skipLibCheck": true,                                
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  }
+}' >tsconfig.json
+}
+
 init_project
+create_file_gitignore
+create_file_tsconfig
 init_repo_git
 install_package_for_update_package_json
 install_typescript
 install_plugins_pattern_commits
 install_eslint
 remove_package_for_update_package_json
+create_folders
+create_file_app
