@@ -13,7 +13,7 @@ e Plugins para padronização de commits(Commitlint, Commitzen, Husky)
 
 * Crie a pasta do seu projeto e execute o seguinte comando:
 ```
-wget -qO- https://raw.githubusercontent.com/claudiozh/script-start-project-node/main/setup.sh | sh
+sh <(wget -qO- https://raw.githubusercontent.com/claudiozh/script-start-project-node/main/setup.sh)
 ```
 ## Outra forma de usar
 
